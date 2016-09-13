@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PartA#2">
+  <ClassDiagramComponents>
+    <Class name="X" package="" visibility="public" xPosition="163.0" yPosition="97.0">
+      <Fields>
+        <Field name="entries" type="List&lt;DiskShare&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Y" package="" visibility="public" xPosition="490.0" yPosition="97.0">
+      <Fields>
+        <Field name="count" type="DiskShare" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="DiskShare" package="" visibility="public" xPosition="330.0" yPosition="350.0">
+      <Fields>
+        <Field name="x1" type="X" visibility="private"/>
+        <Field name="y1" type="Y" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="list" source="DiskShare" target="X" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="count" source="DiskShare" target="Y" sourceCardinality="1..1" targetCardinality="1..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

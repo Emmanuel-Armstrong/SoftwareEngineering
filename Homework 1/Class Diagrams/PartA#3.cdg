@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PartA#3">
+  <ClassDiagramComponents>
+    <Class name="AmazonAccount" package="" visibility="public" xPosition="346.0" yPosition="67.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="entries" type="Category[]" visibility="private"/>
+        <Field name="entries" type="Purchase[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Category" package="" visibility="public" xPosition="142.0" yPosition="360.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Purchase" package="" visibility="public" xPosition="520.0" yPosition="341.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="categories" type="Category[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Purchase" target="Category"/>
+    <HasRelation name="has" source="AmazonAccount" target="Category" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="has" source="AmazonAccount" target="Purchase" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

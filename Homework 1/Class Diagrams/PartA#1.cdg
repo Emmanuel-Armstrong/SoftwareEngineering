@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PartA#1">
+  <ClassDiagramComponents>
+    <Class name="Store" package="" visibility="public" xPosition="152.0" yPosition="93.0">
+      <Fields>
+        <Field name="entries" type="Department[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Department" package="" visibility="public" xPosition="490.0" yPosition="93.0">
+      <Fields>
+        <Field name="my_store_bldg" type="Store" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="10" source="Store" target="Department" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

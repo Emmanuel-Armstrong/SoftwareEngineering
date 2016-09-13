@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PartC">
+  <ClassDiagramComponents>
+    <Class name="Vending" package="" visibility="public" xPosition="478.0" yPosition="357.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="dudCheck" returnType="void" visibility="public"/>
+        <Method name="checkFullBank" returnType="void" visibility="public"/>
+        <Method name="giveTreat" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ATM" package="" visibility="public" xPosition="877.0" yPosition="357.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="print" returnType="void" visibility="public"/>
+        <Method name="checkFullBank" returnType="void" visibility="public"/>
+        <Method name="dispenseCash" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Money" package="" visibility="public" xPosition="518.0" yPosition="660.0">
+      <Fields>
+        <Field name="amount" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Coins" package="" visibility="public" xPosition="344.0" yPosition="947.0">
+      <Fields>
+        <Field name="coins" type="Money[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Bills" package="" visibility="public" xPosition="676.0" yPosition="947.0">
+      <Fields>
+        <Field name="bills" type="Money[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Bank" package="" visibility="public" xPosition="1333.0" yPosition="928.0">
+      <Fields>
+        <Field name="Name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Location" package="" visibility="public" xPosition="490.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Products" package="" visibility="public" xPosition="113.0" yPosition="391.0">
+      <Fields>
+        <Field name="candy" type="String" visibility="private"/>
+        <Field name="Chips" type="String" visibility="private"/>
+        <Field name="Drink" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Company" package="" visibility="public" xPosition="956.0" yPosition="928.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Information" package="" visibility="public" xPosition="1114.0" yPosition="660.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="IATMSystem" package="" visibility="public" xPosition="956.0" yPosition="71.0">
+      <Methods/>
+    </Interface>
+    <Class name="Recipt" package="" visibility="public" xPosition="1333.0" yPosition="357.0">
+      <Fields>
+        <Field name="AccountNumber" type="Double" visibility="private"/>
+        <Field name="TransactionType" type="String" visibility="private"/>
+        <Field name="Date" type="Double" visibility="private"/>
+        <Field name="ATMId" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="NonUSCash" package="" visibility="public" xPosition="113.0" yPosition="845.0">
+      <Fields>
+        <Field name="type" type="string" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="has" source="Location" target="Vending" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <UseRelation name="uses" source="ATM" target="Information" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="has" source="Vending" target="Money" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="has" source="Vending" target="Products" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation name="dudCheck()" source="Vending" target="NonUSCash" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="uses" source="Vending" target="Information" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="print" source="ATM" target="Recipt" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="cash" source="ATM" target="Bills" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="Vending" source="Information" target="Company" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="ATM" source="Information" target="Bank" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ATM" target="IATMSystem"/>
+    <IsRelation name="is" source="Bills" target="Money"/>
+    <HasRelation name="has" source="Location" target="ATM" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Coins" target="Money"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
